@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Findability Check — SiteInABox by Vinks</title>
+  <meta name="description" content="Answer three quick questions and see how easy your business is to find and order from online.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="shared.js" defer></script>
+  <script src="audit.js" defer></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">V</span> SiteInABox <small>by Vinks</small></a>
+    <div class="nav-links">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a class="btn btn-primary btn-sm" href="mockup.html">Get free mockup</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div class="section-head center">
+      <span class="eyebrow">Free tool · 60 seconds</span>
+      <h1>How easy is your business to find online?</h1>
+      <p>Answer four quick questions. Get a score, see what's missing, and get a free mockup of the fix.</p>
+    </div>
+
+    <div class="form-card" id="auditFormCard">
+      <form id="auditForm">
+        <div class="form-grid">
+          <div class="field full">
+            <label for="business">Business name</label>
+            <input id="business" name="business" maxlength="120" placeholder="e.g. Sade's Hair Studio" required>
+          </div>
+          <div class="field">
+            <label for="category">What do you do?</label>
+            <select id="category" name="category">
+              <option value="salon">Salon / beauty</option>
+              <option value="restaurant">Food / restaurant</option>
+              <option value="retail">Shop / retail</option>
+              <option value="health">Health / professional</option>
+              <option value="trades">Trade / home services</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="city">Where are you?</label>
+            <input id="city" name="city" maxlength="80" placeholder="e.g. Wuse II, Abuja" required>
+          </div>
+          <div class="field full"><label>Be honest — right now, do you have…</label></div>
+          <div class="field">
+            <label for="hasSite">A website customers can visit?</label>
+            <select id="hasSite" name="hasSite" class="check">
+              <option value="no">No</option>
+              <option value="unknown">Not sure</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="hasMaps">A Google Maps listing?</label>
+            <select id="hasMaps" name="hasMaps" class="check">
+              <option value="no">No</option>
+              <option value="unknown">Not sure</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="hasWa">A way to order/book on WhatsApp?</label>
+            <select id="hasWa" name="hasWa" class="check">
+              <option value="no">No</option>
+              <option value="unknown">Not sure</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="hasPhone">A number shown clearly online?</label>
+            <select id="hasPhone" name="hasPhone" class="check">
+              <option value="no">No</option>
+              <option value="unknown">Not sure</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" maxlength="120" placeholder="Optional" ></div>
+          <div class="field"><label for="phone">WhatsApp / phone</label><input id="phone" name="phone" maxlength="40" placeholder="e.g. 0803 123 4567" required></div>
+          <div class="field full">
+            <label for="email">Email <span class="hint">(optional — either phone or email is enough)</span></label>
+            <input id="email" name="email" maxlength="160" placeholder="you@example.com">
+          </div>
+          <div class="field full">
+            <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+              <span>I agree to be contacted about my result and the free mockup. No spam, and you can opt out anytime.</span>
+            </label>
+          </div>
+        </div>
+        <p class="error hidden" id="error"></p>
+        <div style="margin-top:22px"><button class="btn btn-primary btn-block" type="submit">See my score →</button></div>
+      </form>
+    </div>
+
+    <div id="result" class="hidden" aria-live="polite">
+      <div class="form-card">
+        <div class="score-ring" id="scoreRing">
+          <div class="score-inner"><strong id="scoreValue">0</strong><small>out of 100</small></div>
+        </div>
+        <h2 class="center" id="scoreTitle">Let's see</h2>
+        <p class="center soft" id="scoreNote"></p>
+        <ul class="check-list" id="checkList"></ul>
+        <div class="result-actions">
+          <a class="btn btn-primary" id="toMockup" href="mockup.html">Make my free mockup →</a>
+          <button class="btn btn-ghost" type="button" id="copyResult">Copy my result link</button>
+        </div>
+        <p class="hint" id="saved" style="margin-top:16px"></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year">2026</span> Vinks Dev · SiteInABox</span>
+    <span><a href="index.html">Back to home</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Never commit private data or credentials
+data/
+.env
+.env.*
+!.env.example
+
+# Local / build noise
+node_modules/
+.vercel/
+*.log
+.DS_Store

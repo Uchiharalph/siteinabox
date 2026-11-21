@@ -1,0 +1,33 @@
+{
+  "currency": "NGN",
+  "monthlyNgn": 10000,
+  "domainNote": ".org domain included in setup (first year)",
+  "plans": {
+    "launch": {
+      "name": "Launch",
+      "setupNgn": 60000,
+      "monthlyNgn": 10000,
+      "delivery": "Live the same day",
+      "tagline": "Your .org domain and your ordering site, sorted.",
+      "features": [
+        "Your .org domain registered and connected",
+        "Mobile-first ordering & booking site",
+        "WhatsApp order button",
+        "Hosting, updates and support every month"
+      ]
+    },
+    "dfy": {
+      "name": "Done-for-you",
+      "setupNgn": 150000,
+      "monthlyNgn": 10000,
+      "delivery": "About 7 days",
+      "tagline": "We handle the domain, design and build for you.",
+      "features": [
+        "Everything in Launch, fully set up",
+        "Your photos, colours and brand",
+        "We write your services and prices",
+        "One-on-one WhatsApp support"
+      ]
+    }
+  }
+}

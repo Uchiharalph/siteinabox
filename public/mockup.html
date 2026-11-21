@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instant Mockup — SiteInABox by Vinks</title>
+  <meta name="description" content="See a free instant mockup of your business's ordering and booking website.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="shared.js" defer></script>
+  <script src="mockup.js" defer></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">V</span> SiteInABox <small>by Vinks</small></a>
+    <div class="nav-links">
+      <a href="audit.html">Findability check</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a class="btn btn-primary btn-sm" href="index.html">Home</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Free preview · no signup needed</span>
+      <h1>See your business online, right now.</h1>
+      <p>Fill in the details on the left. Your mockup updates live on the right.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="form-card" id="formCard">
+        <form id="mockupForm">
+          <div class="form-grid">
+            <div class="field full">
+              <label for="business">Business name</label>
+              <input id="business" name="business" maxlength="120" placeholder="e.g. Sade's Hair Studio" required>
+            </div>
+            <div class="field">
+              <label for="category">What do you do?</label>
+              <select id="category" name="category">
+                <option value="salon">Salon / beauty</option>
+                <option value="restaurant">Food / restaurant</option>
+                <option value="retail">Shop / retail</option>
+                <option value="health">Health / professional</option>
+                <option value="trades">Trade / home services</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="city">Your area</label>
+              <input id="city" name="city" maxlength="80" placeholder="e.g. Wuse II, Abuja" required>
+            </div>
+            <div class="field full">
+              <label for="tagline">One-line tagline <span class="hint">(optional)</span></label>
+              <input id="tagline" name="tagline" maxlength="100" placeholder="e.g. Look good. Book fast.">
+            </div>
+            <div class="field">
+              <label for="waNumber">Your WhatsApp number</label>
+              <input id="waNumber" name="waNumber" maxlength="40" placeholder="e.g. 0803 123 4567" required>
+            </div>
+            <div class="field full">
+              <label>Colour</label>
+              <div class="swatches" id="swatches">
+                <label class="swatch" title="Teal"><input type="radio" name="color" value="#0e7c7b" checked><span style="background:#0e7c7b"></span></label>
+                <label class="swatch" title="Orange"><input type="radio" name="color" value="#e07b2c"><span style="background:#e07b2c"></span></label>
+                <label class="swatch" title="Purple"><input type="radio" name="color" value="#6c4bd8"><span style="background:#6c4bd8"></span></label>
+                <label class="swatch" title="Green"><input type="radio" name="color" value="#2e9e5b"><span style="background:#2e9e5b"></span></label>
+                <label class="swatch" title="Navy"><input type="radio" name="color" value="#234b63"><span style="background:#234b63"></span></label>
+              </div>
+            </div>
+            <div class="field full" style="border-top:1px solid var(--line);padding-top:18px">
+              <label>Send this mockup to me</label>
+              <p class="hint" style="margin:0">We'll save your preview and give you a link you can open on your phone.</p>
+            </div>
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" maxlength="120" placeholder="Optional"></div>
+            <div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" maxlength="40" placeholder="e.g. 0803 123 4567" required></div>
+            <div class="field full"><label for="email">Email <span class="hint">(optional)</span></label><input id="email" name="email" maxlength="160" placeholder="you@example.com"></div>
+            <div class="field full">
+              <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+                <span>I agree to be contacted about my mockup and website. No spam, opt out anytime.</span>
+              </label>
+            </div>
+          </div>
+          <p class="error hidden" id="error"></p>
+          <div style="margin-top:22px"><button class="btn btn-primary btn-block" type="submit">Save &amp; send me my mockup →</button></div>
+        </form>
+      </div>
+
+      <div>
+        <div class="preview-wrap">
+          <div class="preview-label">Live preview</div>
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="mini-site" id="miniSite">
+              <div class="mini-head">
+                <span class="mini-logo" id="miniLogo">SB</span>
+                <div><strong id="miniName">Your Business</strong><small id="miniCity">Your area</small></div>
+              </div>
+              <div class="mini-hero">
+                <span class="mini-tag" id="miniTag">Order online</span>
+                <h3 id="miniHeadline">Your services, one tap away</h3>
+                <p id="miniSub">Pick what you need and message us on WhatsApp.</p>
+              </div>
+              <div class="mini-body">
+                <div class="mini-body-label" id="miniItemsLabel">Popular</div>
+                <div class="mini-items" id="miniItems"></div>
+              </div>
+              <div class="mini-foot">
+                <a class="mini-wa" id="miniWa" href="https://wa.me/2347086208596" target="_blank" rel="noopener">● Order on WhatsApp</a>
+              </div>
+            </div>
+          </div>
+          <p class="hint center" style="margin-top:14px">This is a preview. Your real site looks even better on a phone.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="savedPanel" class="hidden" style="max-width:760px;margin:36px auto 0">
+      <div class="success">
+        <h2>Your mockup is saved 🎉</h2>
+        <p>Open the link below on your phone, or send it to yourself on WhatsApp. Nothing is sent without you pressing send.</p>
+        <div class="result-actions">
+          <button class="btn btn-primary" id="copyLink" type="button">Copy preview link</button>
+          <a class="btn btn-ghost" id="sendWa" href="#" target="_blank" rel="noopener">Open in my WhatsApp</a>
+          <a class="btn btn-accent" id="goLive" href="https://wa.me/2347086208596?text=Hi%20Vinks%2C%20I%20saw%20my%20mockup%20and%20I%27d%20like%20to%20go%20live." target="_blank" rel="noopener">Make it live</a>
+        </div>
+        <p class="hint" id="previewUrl" style="margin-top:14px;word-break:break-all"></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© <span id="year">2026</span> Vinks Dev · SiteInABox</span>
+    <span><a href="index.html">Back to home</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

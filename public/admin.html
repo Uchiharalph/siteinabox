@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lead inbox — SiteInABox</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="shared.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">V</span> SiteInABox <small>by Vinks</small></a>
+    <div class="nav-links">
+      <a href="index.html">Landing page</a>
+      <a href="audit.html">Audit tool</a>
+      <a href="mockup.html">Mockup tool</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Private</span>
+      <h1>Lead inbox</h1>
+      <p class="soft">Everyone who asked for a mockup or a findability check.</p>
+    </div>
+
+    <div id="gate" class="form-card" style="max-width:420px;margin:0 auto">
+      <div class="field">
+        <label for="token">Admin token</label>
+        <input id="token" type="password" placeholder="Value of LEAD_API_TOKEN">
+        <span class="hint">Leave blank if you're running locally without a token.</span>
+      </div>
+      <button class="btn btn-primary btn-block" id="unlock" type="button" style="margin-top:18px">Open inbox</button>
+      <p class="error hidden" id="gateError"></p>
+    </div>
+
+    <div id="inbox" class="hidden">
+      <div class="stats">
+        <div class="stat"><strong id="statTotal">0</strong><span>Total leads</span></div>
+        <div class="stat"><strong id="statToday">0</strong><span>Today</span></div>
+        <div class="stat"><strong id="statAudit">0</strong><span>Audits</span></div>
+        <div class="stat"><strong id="statMockup">0</strong><span>Mockups</span></div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;margin-bottom:14px">
+        <button class="btn btn-ghost btn-sm" id="export" type="button">Export CSV</button>
+      </div>
+      <div class="admin-table-wrap">
+        <table>
+          <thead>
+            <tr><th>When</th><th>Business</th><th>Type</th><th>Contact</th><th>Score</th><th>Status</th><th></th></tr>
+          </thead>
+          <tbody id="leadRows"></tbody>
+        </table>
+      </div>
+      <p class="hint" id="empty" style="margin-top:16px"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner"><span>SiteInABox lead inbox</span><span>Keep this page private.</span></div>
+</footer>
+
+</body>
+</html>
