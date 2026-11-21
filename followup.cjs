@@ -138,13 +138,22 @@ async function sendResend(to, subject, text, html, unsubscribe) {
   return body.id || 'resend';
 }
 
+function toInternationalPhone(value) {
+  const digits = String(value || '').replace(/\D/g, '');
+  if (!digits) return '';
+  if (digits.startsWith('0')) return '234' + digits.slice(1);
+  if (digits.startsWith('234')) return digits;
+  if (digits.startsWith('+')) return digits.slice(1);
+  return digits;
+}
+
 async function sendTermii(to, text) {
   const res = await fetch('https://api.ng.termii.com/api/sms/send', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       api_key: process.env.TERMII_API_KEY,
-      to: to,
+      to: toInternationalPhone(to),
       from: process.env.TERMII_SENDER_ID || 'VinksDev',
       sms: text,
       type: 'plain',
